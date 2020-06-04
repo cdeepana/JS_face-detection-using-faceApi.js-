@@ -43,7 +43,7 @@ function labelImages() {
         labels.map(async label => {
             const descriptions = []
             for (let i = 1; i <= 2; i++){
-                const img = await faceapi.fetchImage(`./label_images/${label}/${i}.jpg`)
+                const img = await faceapi.fetchImage(`./label_images/${label}/${i}.jpg`)  // this label_images is images folder of training images
                 console.log('img => ',img)
                 const detections = await faceapi.detectSingleFace(img).withFaceLandmarks().withFaceDescriptor()
                 console.log('property detections =>',"hit point =>",i,label,detections)
